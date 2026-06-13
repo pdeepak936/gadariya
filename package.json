@@ -1,0 +1,47 @@
+{
+  "name": "gadariya",
+  "version": "1.0.0",
+  "description": "Production-ready eCommerce platform for GADARIYA - Scalable from single store to multi-vendor marketplace",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client",
+    "admin",
+    "shared"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=server\" \"npm run dev --workspace=client\" \"npm run dev --workspace=admin\"",
+    "dev:server": "npm run dev --workspace=server",
+    "dev:client": "npm run dev --workspace=client",
+    "dev:admin": "npm run dev --workspace=admin",
+    "build": "npm run build --workspace=shared && npm run build --workspace=server && npm run build --workspace=client && npm run build --workspace=admin",
+    "build:server": "npm run build --workspace=server",
+    "build:client": "npm run build --workspace=client",
+    "build:admin": "npm run build --workspace=admin",
+    "lint": "npm run lint --workspaces",
+    "test": "npm run test --workspaces",
+    "type-check": "npm run type-check --workspaces",
+    "seed": "npm run seed --workspace=server",
+    "docker:build": "docker-compose -f docker-compose.yml build",
+    "docker:up": "docker-compose -f docker-compose.yml up -d",
+    "docker:down": "docker-compose -f docker-compose.yml down",
+    "docker:logs": "docker-compose -f docker-compose.yml logs -f"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "engines": {
+    "node": ">=18.17.0",
+    "npm": ">=9.0.0"
+  },
+  "keywords": [
+    "ecommerce",
+    "nextjs",
+    "expressjs",
+    "mongodb",
+    "marketplace",
+    "gadariya"
+  ],
+  "author": "GADARIYA",
+  "license": "PROPRIETARY"
+}
