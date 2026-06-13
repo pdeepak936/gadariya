@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply antialiased;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.3s ease-in;
+}
+
+/* Utility classes */
+.container-max {
+  @apply max-w-7xl mx-auto;
+}
+
+.btn-primary {
+  @apply px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all;
+}
+
+.btn-secondary {
+  @apply px-6 py-2 bg-secondary text-white rounded-lg hover:bg-secondary/90 transition-all;
+}
+
+.btn-outline {
+  @apply px-6 py-2 border-2 border-primary text-primary rounded-lg hover:bg-primary/10 transition-all;
+}
+
+/* Form styles */
+.form-input {
+  @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-secondary mb-2;
+}
+
+/* Card styles */
+.card {
+  @apply bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-6;
+}
+
+.card-image {
+  @apply w-full aspect-square object-cover rounded-lg;
+}
